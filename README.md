@@ -16,10 +16,10 @@ Para esse desafio foi utilizado o framework [Node.js](https://nodejs.org/en/) co
 - Yarn
 
 1. Clonar esse repositório:
-   `$ git clone https://github.com/GabrielChagas1/<NOME PASTA>.git`
+   `$ git clone https://github.com/GabrielChagas1/TesteDiarioTrader.git`
 
 2. Entrar na pasta do projeto:
-   `$ cd <NOME PASTA>/`
+   `$ cd TesteDiarioTrader/`
 
 3. Instalar as Dependências:
    `$ yanr install`
