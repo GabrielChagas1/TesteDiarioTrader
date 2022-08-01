@@ -1,0 +1,26 @@
+<form style="background-color: #fff; padding: 40px; border-radius: 4px; margin: 80px 0;" method="POST" action="/departamentos/edit/<%= departamento[0].id %>"> 
+    <h2>Editando um departamento</h2>
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome" value="<%= departamento[0].nome %>" required>
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descricao</label>
+      <input type="descricao" class="form-control" id="descricao" value="<%= departamento[0].descricao %>" name="descricao" required>
+    </div>
+     <div class="form-group">
+      <label for="centroCusto">Centro Custo</label>
+      <select class="form-control" id="centroCusto" name="centroCusto" required>
+        <option disabled>Selecione uma opção</option>
+        <% for( centroCusto of centroCustos ) { %>
+          <% if (departamento[0].centroCusto.nome === centroCusto.nome) { %>
+            <option value="<%= centroCusto.id %>" selected><%= centroCusto.nome %> </option>
+          <% } else {%>
+            <option value="<%= centroCusto.id %>"><%= centroCusto.nome %> </option>
+            <% } %>
+        <% } %>
+      </select>
+    </div>
+   
+    <button type="submit" class="btn btn-primary" id="Editar">Editar</button>
+  </form>
