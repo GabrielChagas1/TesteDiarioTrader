@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <div class="card" style="min-height: 485px">
+            <div class="card-header card-header-text">
+                <div class="d-flex justify-content-between lign-items-center">
+                    <h4 class="card-title">Centro de Custos </h4>
+                    <a href="/centroCustos/add" class="btn btn-danger">Adicionar +</a>
+                </div>
+                <p class="category">Lista com todos os centros de custos cadastrados!</p>
+            </div>
+            <div class="card-content table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descricao</th>
+                            <th>Acões</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (centroCusto of centrosCustos){%>
+                            <tr>
+                                <td><%= centroCusto.id %></td>
+                                <td><%= centroCusto.nome %></td>
+                                <td><%= centroCusto.descricao %></td>
+                                <td class="d-flex justify-content-beetween">
+                                    <a href="/centroCustos/edit/<%= centroCusto.id %>" class="icon icon-warning cursor">
+                                        <span class="material-icons">edit_square</span>
+                                    </a>
+                                    <a href="/centroCustos/delete/<%= centroCusto.id %>" class="icon icon-danger cursor">
+                                        <span class="material-icons">delete</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% } %>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>   
+</div>

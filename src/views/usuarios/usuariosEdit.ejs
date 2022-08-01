@@ -1,0 +1,33 @@
+<form style="background-color: #fff; padding: 40px; border-radius: 4px" method="POST" action="/usuarios/edit/<%= usuario[0].id %>"> 
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" value="<%= usuario[0].nome %>" name="nome">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" value="<%= usuario[0].email %>" name="email">
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="text" class="form-control" id="telefone" value="<%= usuario[0].telefone %>" name="telefone">
+    </div>
+    <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <input type="text" class="form-control" id="cargo" value="<%= usuario[0].cargo %>" name="cargo">
+    </div>
+    <div class="form-group">
+        <label for="departamento">Departamento</label>
+        <select class="form-control" id="departamento" name="departamento">
+          <option>Selecione uma opção</option>
+          <% for( departamento of departamentos ) { %>
+            <% if (usuario[0].departamento.nome === departamento.nome) { %>
+                <option selected value="<%= departamento.id %>"><%= departamento.nome %> </option>
+            <% } else { %>
+                <option value="<%= departamento.id %>"><%= departamento.nome %> </option>
+            <% } %>
+          <% } %>
+        </select>
+      </div>
+    
+    <button type="submit" class="btn btn-primary" id="Editar">Editar</button>
+  </form>

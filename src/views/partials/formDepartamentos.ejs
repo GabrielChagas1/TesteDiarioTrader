@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <div class="card" style="min-height: 485px">
+            <div class="card-header card-header-text">
+                <div class="d-flex justify-content-between lign-items-center">
+                    <h4 class="card-title">Departamentos </h4>
+                    <a href="/departamentos/add" class="btn btn-danger">Adicionar +</a>
+                </div>
+                <p class="category">Lista com todos os departamentos cadastrados!</p>
+            </div>
+            <div class="card-content table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descricao</th>
+                            <th>Centro Custo</th>
+                            <th>Acões</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (departamento of departamentos){%>
+                            <tr>
+                                <td><%= departamento.id %></td>
+                                <td><%= departamento.nome %></td>
+                                <td><%= departamento.descricao %></td>
+                                <td><%= departamento.centroCusto.nome %></td>
+                                <td class="d-flex justify-content-beetween">
+                                    <a href="/departamentos/edit/<%= departamento.id %>" class="icon icon-warning cursor">
+                                        <span class="material-icons">edit_square</span>
+                                    </a>
+                                    <a href="/departamentos/delete/<%= departamento.id %>" class="icon icon-danger cursor">
+                                        <span class="material-icons">delete</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% } %>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>   
+</div>
