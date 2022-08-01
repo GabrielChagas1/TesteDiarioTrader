@@ -1,0 +1,15 @@
+<%- contentFor('body') %>
+
+<% if (Object.keys(message).length != 0) { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= message %> 
+    </div>
+<% } %>
+
+<% if (Object.keys(messageError).length != 0) { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= messageError %> 
+    </div>
+<% } %>
+
+<%- include('../partials/formCentroCustos') %>
